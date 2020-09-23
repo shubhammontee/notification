@@ -12,6 +12,7 @@ require (
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/pierrec/lz4 v2.5.2+incompatible // indirect
+	github.com/rs/zerolog v1.20.0 // indirect
 	github.com/segmentio/kafka-go v0.4.2 // indirect
 	github.com/ugorji/go v1.1.8 // indirect
 	golang.org/x/sys v0.0.0-20200923182605-d9f96fdee20d // indirect
