@@ -22,6 +22,7 @@ var (
 )
 
 func main() {
+	configureProducer()
 	app.StartApplication()
 }
 

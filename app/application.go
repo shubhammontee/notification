@@ -13,7 +13,7 @@ var (
 //StartApplication ...
 func StartApplication() {
 	handler := handler.NewHandler()
-	router.POST("/api/v1/data", handler.PostDataToKafka)
+	router.POST("/sendnotification", handler.PostDataToKafka)
 	router.Run(":9000")
 
 }
