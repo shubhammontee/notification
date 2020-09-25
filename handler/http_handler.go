@@ -33,10 +33,17 @@ func (album albumHandler) PostDataToKafka(ctx *gin.Context) {
 	defer parent.Done()
 
 	form := &struct {
-		Text string `form:"text" json:"text"`
+		Message string `form:"message" json:"message"`
 	}{}
+	if err := ctx.ShouldBindJSON(form); err != nil {
+		ctx.JSON(http.StatusUnprocessableEntity, map[string]interface{}{
+			"error": map[string]interface{}{
+				"message": fmt.Sprintf("error while marshalling json: %s", err.Error()),
+			},
+		})
 
-	ctx.Bind(form)
+	}
+	//ctx.Bind(form)
 	formInBytes, err := json.Marshal(form)
 	if err != nil {
 		ctx.JSON(http.StatusUnprocessableEntity, map[string]interface{}{
